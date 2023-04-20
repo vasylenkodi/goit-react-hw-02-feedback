@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+import css from './statistics.module.css';
 
 export default class Statistics extends Component {
 
@@ -8,13 +9,13 @@ export default class Statistics extends Component {
     dataPairs[4][0] = 'Positive feedback';
     dataPairs[4][1] += "%";
     return (
-      <div>
+      <ul className={css.statisticsList}>
         {dataPairs.map(dataPair => (
-          <li key={shortid.generate()}>
+          <li className={css.statisticsListItem} key={shortid.generate()}>
             {dataPair[0]}: {dataPair[1]}
           </li>
         ))}
-      </div>
+      </ul>
     );
   }
 }
