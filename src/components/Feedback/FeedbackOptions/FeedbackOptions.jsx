@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import css from './feedbackOptions.module.css';
 
 export default class FeedbackOptions extends Component {
+  static propTypes = {
+    options: PropTypes.arrayOf(PropTypes.string),
+    onLeaveFeedback: PropTypes.func,
+  }
 
   render() {
     const { options } = this.props;
